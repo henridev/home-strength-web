@@ -2,18 +2,19 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/global/Layout"
 import VacatureLink from "../components/vacature/VacatureLink"
+import Top from "../components/promo/Top"
 
 export default function vacatures({ data }) {
   return (
     <div>
       <Layout title="vacatures">
-        <ul className="posts">
-          <li className="post">
-            {data.allContentfulVacature.edges.map(({ node }) => {
-              return <VacatureLink node={node} />
-            })}
-          </li>
-        </ul>
+        <Top title="vacatures" />
+        <div className="m-4"></div>
+        <div className="posts">
+          {data.allContentfulVacature.edges.map(({ node }) => {
+            return <VacatureLink node={node} />
+          })}
+        </div>
       </Layout>
     </div>
   )
@@ -29,16 +30,9 @@ export const query = graphql`
           titel
           createdAt
           contentful_id
-          omschrijving {
-            omschrijving
-            childMarkdownRemark {
-              excerpt(pruneLength: 200)
-              html
-            }
-          }
           afbeelding {
-            resize(height: 300, width: 300) {
-              src
+            fluid(maxWidth: 444, maxHeight: 342) {
+              ...GatsbyContentfulFluid
             }
           }
         }

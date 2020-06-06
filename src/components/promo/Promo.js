@@ -3,15 +3,15 @@ import Img from "gatsby-image"
 
 export default function Promo({ node }) {
   return (
-    <div class="lg:flex lg:items-center lg:justify-between">
-      <div class="flex-1 min-w-0">
-        <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:leading-9 sm:truncate">
+    <div className="lg:flex lg:items-center lg:justify-between">
+      <div className="flex-1 min-w-0">
+        <h2 className="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:leading-9 sm:truncate">
           {node.titel}
         </h2>
-        <div class="mt-1 flex flex-col sm:mt-0 sm:flex-row sm:flex-wrap">
-          <div class="m-2 flex items-center text-sm leading-5 text-gray-500 sm:mr-6">
+        <div className="mt-1 flex flex-col sm:mt-0 sm:flex-row sm:flex-wrap">
+          <div className="m-2 ml-0 flex items-center text-sm leading-5 text-gray-500 sm:mr-6">
             <svg
-              class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400"
+              className="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400"
               viewBox="0 0 20 20"
               fill="currentColor"
             >
@@ -24,9 +24,9 @@ export default function Promo({ node }) {
             </svg>
             {node.budget}
           </div>
-          <div class="m-2 flex items-center text-sm leading-5 text-gray-500">
+          <div className="m-2 ml-0  flex items-center text-sm leading-5 text-gray-500">
             <svg
-              class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400"
+              className="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400"
               viewBox="0 0 20 20"
               fill="currentColor"
             >
@@ -38,9 +38,9 @@ export default function Promo({ node }) {
             </svg>
             van {node.beginDatum}
           </div>
-          <div class="m-2 flex items-center text-sm leading-5 text-gray-500">
+          <div className="m-2 ml-0 flex items-center text-sm leading-5 text-gray-500">
             <svg
-              class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400"
+              className="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400"
               viewBox="0 0 20 20"
               fill="currentColor"
             >
@@ -52,7 +52,7 @@ export default function Promo({ node }) {
             </svg>
             tot {node.eindDatum}
           </div>
-          <div className="m-6">{node.omschrijving}</div>
+          <div className="m-6 ml-0">{node.omschrijving}</div>
         </div>
       </div>
       <Img

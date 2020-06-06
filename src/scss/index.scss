@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Noto+Sans+JP&family=Open+Sans&family=Roboto&display=swap");
+@import "_colors";
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1; /* Or flex-grow: 1;*/
+}
+
+.vacature-template {
+  h1 {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  li {
+    list-style-type: square;
+  }
+}
+
+.hero1 {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background: linear-gradient(0deg, $Deep-Red-trans, $Deep-Red-trans),
+    url("https://www.essentia.be/wp-content/uploads/2018/06/table-fr_-leg-delhaize.jpg");
+}
+
+.hero2 {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background: linear-gradient(0deg, $Blue-Beans-trans, $Blue-Beans-trans),
+    url("https://revistaprogresiv.ro/sites/default/files/article/images/delhaize.png");
+}
+
+.posts {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0;
+}
+
+.post {
+  margin: 1rem 0;
+  max-width: 80vw;
+  a {
+    background: #f4f4f4;
+    color: #000000;
+    display: block;
+    padding: 1rem;
+    text-decoration: none;
+  }
+
+  a:hover {
+    background: #e4e4e4;
+  }
+
+  h2 {
+    margin-bottom: 0;
+  }
+
+  p {
+    color: #777777;
+    font-size: 0.8rem;
+    font-style: italic;
+  }
+}

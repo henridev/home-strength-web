@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 
 export default function Hero() {
   return (
@@ -18,10 +19,10 @@ export default function Hero() {
             </p>
             <div>
               <button className="m-3 bg-transparent hover:bg-black  hover: rounded shadow hover:shadow-lg py-2 px-4 border border-black hover:border-transparent">
-                shop
+                <Link to="/shop">shop</Link>
               </button>
               <button className="m-3 bg-transparent hover:bg-black  hover: rounded shadow hover:shadow-lg py-2 px-4 border border-black hover:border-transparent">
-                contact
+                <Link to="/shop">contact</Link>
               </button>
             </div>
           </div>

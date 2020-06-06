@@ -97,7 +97,7 @@ export default function Header() {
           </a>
           <Link
             to="/contact"
-            className="inline-block text-base font-semibold px-4 py-2 leading-none border rounded text-red-dark border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0"
+            className="inline-block text-base font-semibold px-4 py-2 leading-none border rounded text-red-dark border-red-dark hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0"
           >
             contact
           </Link>

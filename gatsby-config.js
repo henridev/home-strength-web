@@ -7,7 +7,7 @@
 module.exports = {
   siteMetadata: {
     title: "ad delhaize dok-noord",
-    author: "henri de bel",
+    author: "Henri De bel",
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -23,7 +23,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: "src",
-        path: `${__dirname}/content/`,
+        path: `${__dirname}/content`,
       },
     },
     {

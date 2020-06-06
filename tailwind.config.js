@@ -2,8 +2,12 @@ module.exports = {
   purge: ["./src/**/*.js", "./src/**/*.jsx", "./src/**/*.ts", "./src/**/*.tsx"],
   theme: {
     colors: {
+      white: {
+        default: "#ffffff",
+      },
       grey: {
         default: "#f1f0ee",
+        dark: "#a3a3a3",
       },
       blue: {
         default: "#7acfd6",
@@ -14,8 +18,7 @@ module.exports = {
       },
     },
     fontFamily: {
-      display: ["Roboto", "sans-serif"],
-      body: ["Open Sans"],
+      sans: ["Inter var", "system-ui", "sans-serif"],
     },
   },
   variants: {},

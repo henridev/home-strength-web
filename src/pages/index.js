@@ -3,24 +3,50 @@ import Layout from "../components/global/Layout"
 import Hero from "../components/index/Hero"
 import Openingsuren from "../components/index/Openingsuren"
 
-export default function Home() {
+import { graphql } from "gatsby"
+
+import Aces from "../components/index/Aces"
+import Spotlights from "../components/index/Spotlights"
+
+export default function Home({ data }) {
   return (
     <div>
       <Layout title="home">
-        <div className="flex ">
-          <div className="hero1 flex-1 bg-red-dark bg-opacity-80 px-4 py-2 ">
-            <Hero />
-          </div>
-          <div className="hero2 flex-1 bg-blue bg-opacity-80 px-4 py-2 ">
-            Medium length
-          </div>
-        </div>
-        <div className="flex ">
-          <div className=" flex-1 bg-grey bg-opacity-80 px-4 py-2 text-center">
-            <Openingsuren />
-          </div>
-        </div>
+        <Hero />
+        <Openingsuren />
+        <Aces edges={data.allContentfulTroeven.edges} />
+        <Spotlights edges={data.allContentfulSpotlight.edges} />
       </Layout>
     </div>
   )
 }
+
+export const query = graphql`
+  {
+    allContentfulTroeven {
+      edges {
+        node {
+          titel
+          beschrijving
+          afbeelding {
+            fluid(maxWidth: 444, maxHeight: 342) {
+              ...GatsbyContentfulFluid
+            }
+          }
+        }
+      }
+    }
+    allContentfulSpotlight {
+      edges {
+        node {
+          afbeelding {
+            fluid(maxWidth: 300, maxHeight: 400) {
+              ...GatsbyContentfulFluid
+            }
+          }
+          titel
+        }
+      }
+    }
+  }
+`

@@ -8,7 +8,7 @@ import PromoPosts from "../components/promo/PromoPosts"
 
 export default function promoties({
   data: {
-    allMarkdownRemark: { edges },
+    allContentfulPromotie: { edges },
   },
 }) {
   const promos = edges
@@ -19,9 +19,9 @@ export default function promoties({
         <div class="container mx-auto flex items-center flex-wrap pt-4 pb-12">
           <PromoTop />
           <PromoPosts>
-            {promos.map(promo => {
+            {/* {promos.map(promo => {
               return <Article node={promo.node} />
-            })}
+            })} */}
           </PromoPosts>
         </div>
       </Layout>
@@ -31,20 +31,15 @@ export default function promoties({
 
 export const pageQuery = graphql`
   query {
-    allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___date] }
-      filter: { fileAbsolutePath: { glob: "**/promoties/*.md" } }
-    ) {
+    allContentfulPromotie(sort: { fields: createdAt, order: DESC }) {
       edges {
         node {
-          id
-          fileAbsolutePath
-          excerpt(pruneLength: 250)
-          html
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            title
-          }
+          slug
+          titel
+          createdAt
+          omschrijving
+          eindDatum(locale: "NL")
+          beginDatum(locale: "NL")
         }
       }
     }

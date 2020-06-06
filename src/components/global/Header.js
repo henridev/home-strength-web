@@ -15,8 +15,8 @@ export default function Header() {
     }
   `)
   return (
-    <nav className="font-display flex items-center justify-between flex-wrap bg-white p-6">
-      <div className="flex items-center flex-shrink-0 text-white  mr-6">
+    <nav className="font-sans flex items-center justify-between flex-wrap bg-white p-6">
+      <div className="flex items-center flex-shrink-0   mr-6">
         <svg
           className="fill-current h-8 w-8 mr-2"
           width="54"

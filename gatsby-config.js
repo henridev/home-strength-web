@@ -6,10 +6,11 @@
 
 module.exports = {
   siteMetadata: {
-    title: "ad dok-noord",
+    title: "ad delhaize dok-noord",
     author: "henri de bel",
   },
   plugins: [
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-contentful`,
       options: {

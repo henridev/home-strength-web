@@ -1,8 +1,8 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/Layout"
+import Layout from "../components/global/Layout"
 
-import PromoTop from "../components/PromoTop"
+import PromoTop from "../components/promo/PromoTop"
 import Article from "../components/promo/Article"
 import PromoPosts from "../components/promo/PromoPosts"
 
@@ -15,7 +15,7 @@ export default function promoties({
 
   return (
     <div>
-      <Layout>
+      <Layout title="promoties">
         <div class="container mx-auto flex items-center flex-wrap pt-4 pb-12">
           <PromoTop />
           <PromoPosts>

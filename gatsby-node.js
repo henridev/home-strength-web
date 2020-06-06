@@ -1,27 +1,7 @@
 // const { fmImagesToRelative } = require("gatsby-remark-relative-images")
 const path = require("path")
-const { createFilePath } = require("gatsby-source-filesystem")
-exports.onCreateNode = handleNodeCreation
-exports.createPages = executePageCreation
 
-function handleNodeCreation({ node, getNode, actions }) {
-  switch (node.internal.type) {
-    case "MarkdownRemark":
-      console.log("FOUND MARKDOWN NODE")
-      if (!node.hasOwnProperty("fileAbsolutePath")) return
-      const { createNodeField } = actions
-      const slug = createFilePath({ node, getNode, basePath: "markdown" })
-      createNodeField({
-        node,
-        name: "slug",
-        value: slug,
-      })
-      break
-    case "SitePage":
-      console.log("FOUND SITEPAGE NODE")
-      break
-  }
-}
+exports.createPages = executePageCreation
 
 async function executePageCreation({ graphql, actions, reporter }) {
   const { createPage } = actions
@@ -30,12 +10,7 @@ async function executePageCreation({ graphql, actions, reporter }) {
       allContentfulVacature(sort: { fields: createdAt, order: DESC }) {
         edges {
           node {
-            startdatum
-            omschrijving {
-              omschrijving
-            }
-            titel
-            createdAt
+            slug
           }
         }
       }
@@ -54,10 +29,10 @@ async function executePageCreation({ graphql, actions, reporter }) {
 function createVacaturePages(node, createPage, resolve) {
   const vacancyTemplate = path.resolve("./src/templates/vacature.js")
   createPage({
-    path: node.titel,
+    path: `/vacatures/${node.slug}`,
     component: vacancyTemplate,
     context: {
-      slug: node.titel,
+      slug: node.slug,
     },
   })
 }

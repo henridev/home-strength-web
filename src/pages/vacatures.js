@@ -1,18 +1,15 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/Layout"
+import Layout from "../components/global/Layout"
 import VacatureLink from "../components/vacature/VacatureLink"
 
 export default function vacatures({ data }) {
-  // const promos = edges
-  // .filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
-  // .map(edge => <PostLink key={edge.node.id} post={edge.node} />)
   return (
     <div>
-      <Layout>
+      <Layout title="vacatures">
         <ul className="posts">
           <li className="post">
-            {data.allMarkdownRemark.edges.map(({ node }) => {
+            {data.allContentfulVacature.edges.map(({ node }) => {
               return <VacatureLink node={node} />
             })}
           </li>
@@ -24,28 +21,24 @@ export default function vacatures({ data }) {
 
 export const query = graphql`
   query {
-    allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___date] }
-      filter: { fileAbsolutePath: { glob: "**/vacatures/*.md" } }
-    ) {
+    allContentfulVacature(sort: { fields: createdAt, order: DESC }) {
       edges {
         node {
-          fields {
-            slug
+          startdatum(fromNow: true, locale: "NL")
+          slug
+          titel
+          createdAt
+          contentful_id
+          omschrijving {
+            omschrijving
+            childMarkdownRemark {
+              excerpt(pruneLength: 200)
+              html
+            }
           }
-          id
-          fileAbsolutePath
-          excerpt(pruneLength: 250)
-          html
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            title
-            featuredImage {
-              childImageSharp {
-                fluid(maxWidth: 800) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
+          afbeelding {
+            resize(height: 300, width: 300) {
+              src
             }
           }
         }

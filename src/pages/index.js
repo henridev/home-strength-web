@@ -1,12 +1,12 @@
 import React from "react"
-import Layout from "../components/Layout"
-import Hero from "../components/Hero"
-import Openingsuren from "../components/Openingsuren"
+import Layout from "../components/global/Layout"
+import Hero from "../components/index/Hero"
+import Openingsuren from "../components/index/Openingsuren"
 
 export default function Home() {
   return (
     <div>
-      <Layout>
+      <Layout title="home">
         <div className="flex ">
           <div className="hero1 flex-1 bg-red-dark bg-opacity-80 px-4 py-2 ">
             <Hero />
@@ -20,11 +20,6 @@ export default function Home() {
             <Openingsuren />
           </div>
         </div>
-        {/* <div className="flex ">
-          <div className=" flex-1 bg-grey bg-opacity-80 px-4 py-2 ">
-            <Openingsuren />
-          </div>
-        </div> */}
       </Layout>
     </div>
   )

@@ -9,10 +9,8 @@ function encode(data) {
     .join("&")
 }
 
-export default function Solliciteren({ location }) {
-  const [state, setState] = React.useState({
-    sollicitatietitel: location.state.vacatureTitel,
-  })
+export default function Solliciteren() {
+  const [state, setState] = React.useState({})
 
   const handleChange = e => {
     setState({ ...state, [e.target.name]: e.target.value })

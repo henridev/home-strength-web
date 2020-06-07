@@ -32,7 +32,7 @@ export default function vacature({ data }) {
               terug naar vacatures
             </button>
           </Link>
-          <Link to={"/solliciteren"} state={{ vacatureTitel: post.title }}>
+          <Link to={"/solliciteren"}>
             <button className="font-semibold m-3 text-red-dark bg-white hover:bg-grey  hover: rounded shadow hover:shadow-lg py-2 px-4   hover:border-grey">
               ik heb interesse
             </button>

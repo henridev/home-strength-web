@@ -10,15 +10,18 @@ body {
   flex-direction: column;
 }
 
-body::-webkit-scrollbar {
+body::-webkit-scrollbar,
+.promos::-webkit-scrollbar {
   width: 0.5rem;
 }
 
-body::-webkit-scrollbar-track {
+body::-webkit-scrollbar-track,
+.promos::-webkit-scrollbar-track {
   background: $Light-Classy-Grey;
 }
 
-body::-webkit-scrollbar-thumb {
+body::-webkit-scrollbar-thumb,
+.promos::-webkit-scrollbar-thumb {
   background: $Blue-Beans;
 }
 

@@ -1,19 +1,13 @@
+/* #region  Imports */
 import React, { useState } from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faFacebook } from "@fortawesome/free-brands-svg-icons"
+/* #endregion */
 
 export default function Header() {
   const [isExpanded, toggleExpansion] = useState(false)
-  const data = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
+  const data = useStaticQuery(metaQuery)
   return (
     <nav className="font-sans  flex items-center justify-between flex-wrap bg-white p-6">
       <div className="flex items-center flex-shrink-0 mr-6">
@@ -59,36 +53,18 @@ export default function Header() {
         } w-full block flex-grow lg:flex lg:items-center lg:w-auto`}
       >
         <div className="text-base text-sm lg:flex-grow font-semibold">
-          <Link
-            to={`/`}
-            href="#responsive-header"
-            activeStyle={{ color: "red" }}
-            className="block mt-4 lg:inline-block lg:mt-0  hover:text-red-dark mr-4"
-          >
-            home
-          </Link>
-          <Link
-            to={`/promoties`}
-            href="#responsive-header"
-            activeStyle={{ color: "red" }}
-            className="block mt-4 lg:inline-block lg:mt-0  hover:text-red-dark mr-4"
-          >
-            promoties
-          </Link>
-          <Link
-            to={`/vacatures`}
-            activeStyle={{ color: "red" }}
-            className="block mt-4 lg:inline-block lg:mt-0  hover:text-red-dark mr-4"
-          >
-            vacatures
-          </Link>
-          <Link
-            to={`/shop`}
-            activeStyle={{ color: "red" }}
-            className="block mt-4 lg:inline-block lg:mt-0  hover:text-red-dark"
-          >
-            shop
-          </Link>
+          {["", "promoties", "vacatures", "shop"].map(linkto => {
+            return (
+              <Link
+                to={`/${linkto}`}
+                href="#responsive-header"
+                activeStyle={{ color: "red" }}
+                className="block mt-4 lg:inline-block lg:mt-0  hover:text-red-dark mr-4"
+              >
+                {linkto === "" ? "home" : linkto}
+              </Link>
+            )
+          })}
         </div>
         <div>
           <a
@@ -111,3 +87,13 @@ export default function Header() {
     </nav>
   )
 }
+
+const metaQuery = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+  }
+`

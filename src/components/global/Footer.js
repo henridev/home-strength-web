@@ -1,3 +1,4 @@
+/* #region  imports */
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -7,17 +8,10 @@ import {
   faFacebook,
 } from "@fortawesome/free-brands-svg-icons"
 import { faMoneyBill, faMoneyCheck } from "@fortawesome/free-solid-svg-icons"
+/* #endregion */
 
 export default function Footer() {
-  const data = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          author
-        }
-      }
-    }
-  `)
+  const data = useStaticQuery(queryMetaData)
   return (
     <div className=" m-8 container bg-grey-lighter p-8 border-t-2 border-grey-dark">
       <div className="sm:flex mb-4">
@@ -98,3 +92,15 @@ export default function Footer() {
     </div>
   )
 }
+
+/* #region  Query */
+const queryMetaData = graphql`
+  query {
+    site {
+      siteMetadata {
+        author
+      }
+    }
+  }
+`
+/* #endregion */

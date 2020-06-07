@@ -22,7 +22,7 @@ export default function Hero() {
                 <Link to="/shop">shop</Link>
               </button>
               <button className="m-3 bg-transparent hover:bg-black  hover: rounded shadow hover:shadow-lg py-2 px-4 border border-black hover:border-transparent">
-                <Link to="/shop">contact</Link>
+                <Link to="/contact">contact</Link>
               </button>
             </div>
           </div>

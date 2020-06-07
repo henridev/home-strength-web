@@ -6,8 +6,21 @@
 
 module.exports = {
   siteMetadata: {
+    keywords: [
+      "delhaize",
+      "dok-noord",
+      "gent",
+      "supermarkt",
+      "kwaliteit",
+      "voeding",
+      "drank",
+      "open op zondag",
+    ],
     title: "ad delhaize dok-noord",
     author: "Henri De bel",
+    titleTemplate: "de beste supermarkt",
+    description: "beste supermarkt",
+    url: "https://www.addelhaizedoknoord.be", // No trailing slash allowed!
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

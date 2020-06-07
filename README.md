@@ -6,7 +6,7 @@ Handleiding die aantoont hoe delen van de website aangepast moeten worden via de
 
 ## 🚀 Quick start
 
-1.  **Ga naar de conentful website**
+1.  **Ga naar de contentful website**
 
     [Contentful](https://www.contentful.com/?utm_source=google&utm_medium=search-paid&utm_campaign=brand-search-b2b&utm_content=developers-docs-api&gclid=Cj0KCQjwoPL2BRDxARIsAEMm9y_vzKUbRCkamRrYxybkOvTHFaLwTVjBOBdvq8rq_ak2KiMIprXFEiYaAsmEEALw_wcB)
 

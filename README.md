@@ -27,7 +27,8 @@ Handleiding die aantoont hoe delen van de website aangepast moeten worden via de
 
 3.  **Aanpassen van content**
 
-    - selecteer item om aan te passen <img src="https://lh3.google.com/u/0/d/1l9HuIgSR86pIFI_zk5vSp7I8oNCMvubo=w3000-h1638-iv1" width=700>
+    - selecteer item om aan te passen
+      ![stap 1](https://lh3.google.com/u/0/d/1l9HuIgSR86pIFI_zk5vSp7I8oNCMvubo=w3000-h1638-iv1)
     - vul in verplichte velden en eventueel niet verplichte <img src="https://lh3.google.com/u/0/d/1vt397Ufyy7xrx-pLrNWB1YtM-E4z4s3y=w3000-h1638-iv1" width=700>
     - voeg media afbeelding toe na op afbeelding te klikken
       1. selecteer file op lokale computer <img src="https://lh3.google.com/u/0/d/1i3cYQH6Rqb9m8zojmj0Qza3TTPxq7EGi=w3000-h1638-iv1" width=700>

@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/global/Layout"
 import VacatureLink from "../components/vacature/VacatureLink"
-import Top from "../components/promo/Top"
+import Top from "../components/global/Top"
 
 export default function vacatures({ data }) {
   return (
@@ -10,7 +10,7 @@ export default function vacatures({ data }) {
       <Layout title="vacatures">
         <Top title="vacatures" />
         <div className="m-4"></div>
-        <div className="posts">
+        <div className="posts w-full  flex flex-col items-center px-3">
           {data.allContentfulVacature.edges.map(({ node }) => {
             return <VacatureLink node={node} />
           })}

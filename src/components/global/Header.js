@@ -15,8 +15,8 @@ export default function Header() {
     }
   `)
   return (
-    <nav className="font-sans flex items-center justify-between flex-wrap bg-white p-6">
-      <div className="flex items-center flex-shrink-0   mr-6">
+    <nav className="font-sans  flex items-center justify-between flex-wrap bg-white p-6">
+      <div className="flex items-center flex-shrink-0 mr-6">
         <svg
           className="fill-current h-8 w-8 mr-2"
           width="54"
@@ -62,6 +62,7 @@ export default function Header() {
           <Link
             to={`/`}
             href="#responsive-header"
+            activeStyle={{ color: "red" }}
             className="block mt-4 lg:inline-block lg:mt-0  hover:text-red-dark mr-4"
           >
             home
@@ -69,18 +70,21 @@ export default function Header() {
           <Link
             to={`/promoties`}
             href="#responsive-header"
+            activeStyle={{ color: "red" }}
             className="block mt-4 lg:inline-block lg:mt-0  hover:text-red-dark mr-4"
           >
             promoties
           </Link>
           <Link
             to={`/vacatures`}
+            activeStyle={{ color: "red" }}
             className="block mt-4 lg:inline-block lg:mt-0  hover:text-red-dark mr-4"
           >
             vacatures
           </Link>
           <Link
             to={`/shop`}
+            activeStyle={{ color: "red" }}
             className="block mt-4 lg:inline-block lg:mt-0  hover:text-red-dark"
           >
             shop
@@ -97,6 +101,7 @@ export default function Header() {
           </a>
           <Link
             to="/contact"
+            activeStyle={{ color: "red" }}
             className="inline-block text-base font-semibold px-4 py-2 leading-none border rounded text-red-dark border-red-dark hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0"
           >
             contact

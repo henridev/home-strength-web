@@ -1,4 +1,5 @@
 import React from "react"
+import Img from "gatsby-image"
 import { graphql } from "gatsby"
 import { Link } from "gatsby"
 import Layout from "../components/global/Layout"
@@ -17,29 +18,26 @@ export default function vacature({ data }) {
   const post = data.contentfulVacature
   return (
     <Layout title="vacature">
-      <div
-        className="vacature-template"
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          flexDirection: "column",
-          alignItems: "center",
-        }}
-      >
+      <div className="container vacature-template rounded bg-blue bg-opacity-25 p-4">
         <h1>{post.title}</h1>
-        <img src={post.afbeelding.resize.src} />
-        <small>{post.startdatum}</small>
+        <Img
+          className="mx-auto border-none max-w-screen-sm h-auto rounded-lg"
+          fluid={post.afbeelding.fluid}
+        />
+        <small>gepost: {post.startdatum}</small>
         {documentToReactComponents(post.body.json, options)}
-        <Link to="/vacatures">
-          <button className="m-3 bg-transparent hover:bg-black  hover: rounded shadow hover:shadow-lg py-2 px-4 border border-black hover:border-transparent">
-            terug naar vacatures
-          </button>
-        </Link>
-        <Link to="/postuleren">
-          <button className="m-3 bg-transparent hover:bg-black  hover: rounded shadow hover:shadow-lg py-2 px-4 border border-black hover:border-transparent">
-            ik heb interesse
-          </button>
-        </Link>
+        <div className="mt-4">
+          <Link to="/vacatures">
+            <button className="font-semibold m-3 text-red-dark bg-white hover:bg-grey  hover: rounded shadow hover:shadow-lg py-2 px-4   hover:border-grey">
+              terug naar vacatures
+            </button>
+          </Link>
+          <Link to={"/solliciteren"} state={{ vacatureTitel: post.title }}>
+            <button className="font-semibold m-3 text-red-dark bg-white hover:bg-grey  hover: rounded shadow hover:shadow-lg py-2 px-4   hover:border-grey">
+              ik heb interesse
+            </button>
+          </Link>
+        </div>
       </div>
     </Layout>
   )
@@ -57,8 +55,8 @@ export const query = graphql`
         json
       }
       afbeelding {
-        resize(height: 300, width: 300) {
-          src
+        fluid(maxWidth: 350, maxHeight: 250) {
+          ...GatsbyContentfulFluid
         }
       }
     }

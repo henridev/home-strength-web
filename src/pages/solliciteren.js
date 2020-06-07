@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/global/Layout"
 import { navigate } from "gatsby-link"
-import Top from "../components/contact/Top"
+import Top from "../components/solliciteren/Top"
 
 function encode(data) {
   return Object.keys(data)
@@ -9,8 +9,10 @@ function encode(data) {
     .join("&")
 }
 
-export default function Contact() {
-  const [state, setState] = React.useState({})
+export default function Solliciteren({ location }) {
+  const [state, setState] = React.useState({
+    sollicitatietitel: location.state.vacatureTitel,
+  })
 
   const handleChange = e => {
     setState({ ...state, [e.target.name]: e.target.value })
@@ -38,12 +40,13 @@ export default function Contact() {
           <Top />
           <form
             className="w-full max-w-lg"
-            name="contact"
             action="/thanks/"
             data-netlify="true"
             data-netlify-honeypot="bot-field"
+            name="solliciatie"
             onSubmit={handleSubmit}
           >
+            {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
             <input type="hidden" name="form-name" value="contact" />
             <p hidden>
               <label>
@@ -105,22 +108,40 @@ export default function Contact() {
                 <p className="text-gray-600 text-xs italic">Veld vereist</p>
               </div>
             </div>
+            <div className="flex flex-wrap -mx-3 mx-6 my-3">
+              <div className="w-full px-3 mx-6 ">
+                <label
+                  className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                  for="grid-password"
+                >
+                  telefoon
+                </label>
+                <input
+                  name="telefoon"
+                  onChange={handleChange}
+                  className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-red-lighter"
+                  id="tel"
+                  type="tel"
+                />
+                <p className="text-gray-600 text-xs italic">Veld vereist</p>
+              </div>
+            </div>
             <div className="flex flex-wrap -mx-3 m-6">
               <div className="w-full px-3 mx-6 my-3">
                 <label
                   className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                   for="grid-password"
                 >
-                  Bericht
+                  Motivatie
                 </label>
                 <textarea
-                  name="bericht"
+                  name="motivatie"
                   onChange={handleChange}
                   className=" no-resize appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-red-lighter h-48 resize-none"
                   id="message"
                 ></textarea>
                 <p className="text-gray-600 text-xs italic">
-                  Laat ons weten hoe we kunnen helpen
+                  Laat ons weten waarom jij de geschikte kandidaat bent
                 </p>
               </div>
             </div>

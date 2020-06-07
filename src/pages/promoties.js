@@ -2,8 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/global/Layout"
 
-import Top from "../components/promo/Top"
-import Article from "../components/promo/Article"
+import Top from "../components/global/Top"
 import PromoPosts from "../components/promo/PromoPosts"
 
 export default function promoties({ data }) {

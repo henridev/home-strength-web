@@ -15,6 +15,7 @@ const SEO = ({ title, description, image, article }) => {
     author,
     titleTemplate,
     keywords,
+    siteUrl,
   } = site.siteMetadata
 
   const seo = {
@@ -37,7 +38,7 @@ const SEO = ({ title, description, image, article }) => {
         <meta property="og:description" content={seo.description} />
       )}
       {seo.keywords && (
-        <meta property="og:keywords" content={seo.keywors.join(",")} />
+        <meta property="og:keywords" content={seo.keywords.join(",")} />
       )}
     </Helmet>
   )

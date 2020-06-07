@@ -28,7 +28,7 @@ Handleiding die aantoont hoe delen van de website aangepast moeten worden via de
 3.  **Aanpassen van content**
 
     - selecteer item om aan te passen
-      ![stap](https://lh3.google.com/uc?export=view&id=1l9HuIgSR86pIFI_zk5vSp7I8oNCMvubo)
+      ![stap](https://drive.google.com/uc?export=view&id=1l9HuIgSR86pIFI_zk5vSp7I8oNCMvubo)
     - vul in verplichte velden en eventueel niet verplichte ![stap](https://drive.google.com/uc?export=view&id=1vt397Ufyy7xrx-pLrNWB1YtM-E4z4s3y)
 
     - voeg media afbeelding toe na op afbeelding te klikken

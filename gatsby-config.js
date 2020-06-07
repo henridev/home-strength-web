@@ -18,7 +18,7 @@ module.exports = {
     ],
     title: "ad delhaize dok-noord",
     author: "Henri De bel",
-    titleTemplate: "de beste supermarkt",
+    titleTemplate: "ad-delhaize dok noord",
     description: "beste supermarkt",
     url: "https://www.addelhaizedoknoord.be", // No trailing slash allowed!
   },

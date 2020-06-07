@@ -10,7 +10,7 @@ export default function vacatures({ data }) {
       <Layout title="vacatures">
         <Top title="vacatures" />
         <div className="m-4"></div>
-        <div className="posts w-full  flex flex-col items-center px-3">
+        <div className="posts w-full overflow-y-scroll  flex flex-col items-start px-3">
           {data.allContentfulVacature.edges.map(({ node }) => {
             return <VacatureLink node={node} />
           })}

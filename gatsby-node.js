@@ -14,6 +14,13 @@ async function executePageCreation({ graphql, actions, reporter }) {
           }
         }
       }
+      allContentfulProduct(sort: { fields: createdAt, order: DESC }) {
+        edges {
+          node {
+            slug
+          }
+        }
+      }
     }
   `)
 
@@ -24,6 +31,9 @@ async function executePageCreation({ graphql, actions, reporter }) {
   response.data.allContentfulVacature.edges.forEach(({ node }) => {
     createVacaturePages(node, createPage)
   })
+  response.data.allContentfulProduct.edges.forEach(({ node }) => {
+    createProductPages(node, createPage)
+  })
 }
 
 function createVacaturePages(node, createPage, resolve) {
@@ -31,6 +41,17 @@ function createVacaturePages(node, createPage, resolve) {
   createPage({
     path: `/vacatures/${node.slug}`,
     component: vacancyTemplate,
+    context: {
+      slug: node.slug,
+    },
+  })
+}
+
+function createProductPages(node, createPage, resolve) {
+  const productTemplate = path.resolve("./src/templates/product.js")
+  createPage({
+    path: `/shop/${node.slug}`,
+    component: productTemplate,
     context: {
       slug: node.slug,
     },

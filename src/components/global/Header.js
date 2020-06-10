@@ -3,6 +3,7 @@ import React, { useState } from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faFacebook } from "@fortawesome/free-brands-svg-icons"
+import { faShoppingBag } from "@fortawesome/free-solid-svg-icons"
 /* #endregion */
 
 export default function Header() {
@@ -67,6 +68,13 @@ export default function Header() {
           })}
         </div>
         <div>
+          <button className="snipcart-checkout">
+            <FontAwesomeIcon
+              className="h-6 w-6 fill-current text-gray-500 hover:text-black"
+              icon={faShoppingBag}
+              size="lg"
+            />
+          </button>
           <a
             className="m-3"
             target="_blank"

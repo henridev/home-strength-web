@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faInfoCircle } from "@fortawesome/free-solid-svg-icons"
 import Img from "gatsby-image"
 
-export default function VacatureLink({ node }) {
+export default function VacatureItem({ node }) {
   return (
     <div className="lg:flex lg:items-center lg:justify-between m-6">
       <div className="flex-1 min-w-0">

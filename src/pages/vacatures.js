@@ -1,20 +1,18 @@
+/* #region  Imports */
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/global/Layout"
-import VacatureLink from "../components/vacature/VacatureLink"
-import Top from "../components/global/Top"
+import VacatureHeader from "../components/vacature/VacatureHeader"
+import VacatureList from "../components/vacature/VacatureList"
+/* #endregion */
 
-export default function vacatures({ data }) {
+export default function Vacatures({ data }) {
   return (
     <div>
       <Layout title="vacatures">
-        <Top title="vacatures" />
+        <VacatureHeader title="vacatures" />
         <div className="m-4"></div>
-        <div className="posts w-full overflow-y-scroll  flex flex-col items-start px-3">
-          {data.allContentfulVacature.edges.map(({ node }) => {
-            return <VacatureLink node={node} />
-          })}
-        </div>
+        <VacatureList edges={data.allContentfulVacature.edges} />
       </Layout>
     </div>
   )

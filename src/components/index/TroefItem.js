@@ -1,7 +1,7 @@
 import React from "react"
 import Img from "gatsby-image"
 
-const Card = ({ node }) => {
+const TroefItem = ({ node }) => {
   const { titel, beschrijving } = node
   return (
     <div className="w-full sm:w-1/2 lg:w-1/3 p-3 md:p-6 text-left">
@@ -18,4 +18,4 @@ const Card = ({ node }) => {
   )
 }
 
-export default Card
+export default TroefItem

@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/global/Layout"
 import { navigate } from "gatsby-link"
-import Top from "../components/contact/Top"
+import ContactHeader from "../components/contact/ContactHeader"
 
 function encode(data) {
   return Object.keys(data)
@@ -35,7 +35,7 @@ export default function Contact() {
     <div>
       <Layout title="contact">
         <section className="flex flex-col items-center justify-center">
-          <Top />
+          <ContactHeader />
           <form
             className="w-full max-w-lg"
             name="contact"

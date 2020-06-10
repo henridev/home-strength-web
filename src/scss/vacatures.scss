@@ -1,0 +1,27 @@
+.vacature-template {
+  h1 {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  li {
+    list-style-type: square;
+  }
+}
+
+.vacature-lijst {
+  list-style-type: none;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  min-height: 50vh;
+  margin: 0;
+}

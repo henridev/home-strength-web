@@ -5,8 +5,8 @@ import Openingsuren from "../components/index/Openingsuren"
 
 import { graphql } from "gatsby"
 
-import Aces from "../components/index/Aces"
-import Spotlights from "../components/index/Spotlights"
+import TroevenList from "../components/index/TroevenList"
+import SpotlightList from "../components/index/SpotlightList"
 
 export default function Home({ data }) {
   return (
@@ -14,8 +14,8 @@ export default function Home({ data }) {
       <Layout title="home">
         <Hero />
         <Openingsuren />
-        <Aces edges={data.allContentfulTroeven.edges} />
-        <Spotlights edges={data.allContentfulSpotlight.edges} />
+        <TroevenList edges={data.allContentfulTroeven.edges} />
+        <SpotlightList edges={data.allContentfulSpotlight.edges} />
       </Layout>
     </div>
   )

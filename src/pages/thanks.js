@@ -20,14 +20,8 @@ export default () => (
         <div
           style={{
             backgroundImage: `Url(/assets/svg/correct.svg)`,
-            width: "300px",
-            height: "300px",
-            backgroundRepeat: "no-repeat",
-            justifySelf: "center",
-            margin: "2rem auto",
-            backgroundSize: "cover",
           }}
-          className="fill-current text-gray-900 w-3/5 mx-auto"
+          className="thanks-background fill-current text-gray-900 w-3/5 mx-auto"
         ></div>
       </div>
     </div>

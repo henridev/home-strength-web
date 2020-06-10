@@ -1,7 +1,7 @@
 import React from "react"
 import Img from "gatsby-image"
 
-export default function Spotlight({ node }) {
+export default function SpotlightItem({ node }) {
   return (
     <div className="w-full lg:w-4/12 px-4">
       <h5 className="text-xl font-semibold pb-4 text-center bg-white">

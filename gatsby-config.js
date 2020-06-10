@@ -3,6 +3,13 @@
  *
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
+// Define site URL here
+let URL
+if (process.env.NODE_ENV === "production") {
+  URL = "https://www.addelhaizedoknoord.be"
+} else {
+  URL = "http://localhost:8000"
+}
 
 module.exports = {
   siteMetadata: {
@@ -21,6 +28,7 @@ module.exports = {
     titleTemplate: "ad-delhaize dok noord",
     description: "beste supermarkt",
     url: "https://www.addelhaizedoknoord.be", // No trailing slash allowed!
+    siteUrl: URL,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -62,6 +70,15 @@ module.exports = {
             },
           },
         ],
+      },
+    },
+    {
+      resolve: "gatsby-plugin-snipcart",
+      options: {
+        apiKey: process.env.SNIPCART_PUBLIC_KEY,
+        autopop: true,
+        js: "https://cdn.snipcart.com/themes/v3.0.0/default/snipcart.js",
+        styles: "https://cdn.snipcart.com/themes/v3.0.0/default/snipcart.css",
       },
     },
     `gatsby-plugin-fontawesome-css`,

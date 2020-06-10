@@ -1,17 +1,16 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/global/Layout"
-
-import Top from "../components/global/Top"
-import PromoPosts from "../components/promo/PromoPosts"
+import PromoList from "../components/promo/PromoList"
+import PromoHeader from "../components/promo/PromoHeader"
 
 export default function promoties({ data }) {
   return (
     <div>
       <Layout title="promoties">
         <div class="container mx-auto flex items-center flex-wrap pt-4 pb-12">
-          <Top title="promoties" />
-          <PromoPosts edges={data.allContentfulPromotie.edges} />
+          <PromoHeader />
+          <PromoList edges={data.allContentfulPromotie.edges} />
         </div>
       </Layout>
     </div>

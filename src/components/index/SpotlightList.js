@@ -1,5 +1,5 @@
 import React from "react"
-import Spotlight from "./Spotlight"
+import SpotlightItem from "./SpotlightItem"
 
 export default function Spotlights({ edges }) {
   return (
@@ -22,7 +22,7 @@ export default function Spotlights({ edges }) {
               <div className="w-full lg:w-12/12 px-4  mt-24">
                 <div className="flex flex-wrap">
                   {edges.map(({ node }) => (
-                    <Spotlight node={node} />
+                    <SpotlightItem node={node} />
                   ))}
                 </div>
               </div>

@@ -79,6 +79,12 @@ module.exports = {
         autopop: false,
       },
     },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID,
+      },
+    },
     `gatsby-plugin-fontawesome-css`,
     `gatsby-remark-images`,
     `gatsby-plugin-sharp`,

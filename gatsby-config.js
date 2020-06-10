@@ -73,12 +73,10 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-snipcart",
+      resolve: "gatsby-plugin-snipcartv3",
       options: {
         apiKey: process.env.SNIPCART_PUBLIC_KEY,
         autopop: false,
-        js: "https://cdn.snipcart.com/themes/v3.0.0/default/snipcart.js",
-        styles: "https://cdn.snipcart.com/themes/v3.0.0/default/snipcart.css",
       },
     },
     `gatsby-plugin-fontawesome-css`,

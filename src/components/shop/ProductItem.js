@@ -25,7 +25,7 @@ export default function Product({ node }) {
           data-item-id={node.contentful_id}
           data-item-price={node.prijs}
           data-item-image={node.afbeelding.fluid.src}
-          data-item-url={`${site.siteMetadata.siteUrl}/products/${node.slug}`}
+          data-item-url={`/`}
           data-item-name={node.naam}
         >
           <FontAwesomeIcon

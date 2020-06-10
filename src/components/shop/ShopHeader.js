@@ -1,39 +1,75 @@
 import React from "react"
+import PropTypes from "prop-types"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faFilter } from "@fortawesome/free-solid-svg-icons"
 
-export default function ShopHeader() {
+export default function ShopHeader({ filters, setFilters }) {
+  function handleFilterChange(name) {
+    const newFilters = filters.map(filter => {
+      if (filter.name === name) {
+        filter.isChecked = !filter.isChecked
+      }
+      return filter
+    })
+    setFilters(newFilters)
+    console.log("newFilters", newFilters)
+  }
+
   return (
-    <nav id="store" className="w-full  top-0 px-6 py-1">
-      <div className="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 px-2 py-3">
-        <a className="uppercase tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl ">
+    <nav id="store" className="w-full bg-red-dark  top-0 px-6 py-1">
+      <div className="text-grey w-full  mx-auto flex flex-wrap items-center justify-between mt-0 px-2 py-3">
+        <a className="uppercase tracking-wide no-underline hover:no-underline font-bold  text-xl ">
           Uw delhaize van nabij
         </a>
-
-        <div className="flex items-center" id="store-nav-content">
-          <a className="pl-3 inline-block no-underline hover:text-black">
+        <div className="text-xl dropdown inline-block relative z-10">
+          <button className="bg-gray-300 text-gray-700 font-semibold py-2 px-4 rounded inline-flex items-center">
+            <span className="mr-1">Filter</span>
             <svg
-              className="fill-current hover:text-black"
+              className="fill-current h-4 w-4"
               xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
+              viewBox="0 0 20 20"
             >
-              <path d="M7 11H17V13H7zM4 7H20V9H4zM10 15H14V17H10z" />
+              <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />{" "}
             </svg>
-          </a>
-
-          <a className="pl-3 inline-block no-underline hover:text-black">
-            <svg
-              className="fill-current hover:text-black"
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-            >
-              <path d="M10,18c1.846,0,3.543-0.635,4.897-1.688l4.396,4.396l1.414-1.414l-4.396-4.396C17.365,13.543,18,11.846,18,10 c0-4.411-3.589-8-8-8s-8,3.589-8,8S5.589,18,10,18z M10,4c3.309,0,6,2.691,6,6s-2.691,6-6,6s-6-2.691-6-6S6.691,4,10,4z" />
-            </svg>
-          </a>
+          </button>
+          <ul className=" text-black text-base border rounded bg-white dropdown-menu absolute hidden text-gray-700 pt-1">
+            {filters.map((filter, i) => {
+              return (
+                <li
+                  key={i}
+                  className={`m-1 ${
+                    i === filters.length - 1 ? "" : "border-b-2 border-gray"
+                  }`}
+                >
+                  <a
+                    className="rounded-t py-1 px-3 block whitespace-no-wrap"
+                    href="#"
+                  >
+                    <input
+                      className="m-3"
+                      type="checkbox"
+                      name={filter.name}
+                      checked={filter.isChecked}
+                      onChange={e => handleFilterChange(filter.name)}
+                    />
+                    <label
+                      for={filter.name}
+                      onClick={e => handleFilterChange(filter.name)}
+                    >
+                      {filter.name}
+                    </label>
+                  </a>
+                </li>
+              )
+            })}
+          </ul>
         </div>
       </div>
     </nav>
   )
+}
+
+ShopHeader.propTypes = {
+  filters: PropTypes.arrayOf(PropTypes.object),
+  setFilters: PropTypes.func,
 }

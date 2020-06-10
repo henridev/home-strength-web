@@ -23,6 +23,10 @@ main {
   flex: 1; /* Or flex-grow: 1;*/
 }
 
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
 .container {
   max-width: 1280px;
   margin-left: auto;

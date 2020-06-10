@@ -7,7 +7,7 @@ import { useStaticQuery, Link } from "gatsby"
 export default function Product({ node }) {
   const { site } = useStaticQuery(metaQuery)
   return (
-    <div className="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col border-2 border-blue m-2">
+    <div className="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col  rounded">
       <Link
         style={{ boxShadow: `none`, maxWidth: "300px" }}
         to={`/shop/${node.slug}`}

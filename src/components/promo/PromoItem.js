@@ -1,6 +1,6 @@
 import React from "react"
 import Img from "gatsby-image"
-
+//
 export default function Promo({ node }) {
   return (
     <div className="lg:flex lg:items-center lg:justify-between m-6 border-b-2 border-red-lighter pb-4">

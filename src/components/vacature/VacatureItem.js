@@ -27,7 +27,7 @@ export default function VacatureItem({ node }) {
             geplaatst: {node.startdatum}
           </div>
 
-          <div className="my-4 mr-4 bg-transparent hover:bg-black  hover: rounded shadow hover:shadow-lg py-2 px-4 border border-black hover:border-transparent">
+          <div className="my-4 mr-4 bg-transparent hover:bg-grey  hover: rounded shadow hover:shadow-lg py-2 px-4 border border-black hover:border-transparent">
             <Link
               style={{ boxShadow: `none`, maxWidth: "300px" }}
               to={`/vacatures/${node.slug}`}

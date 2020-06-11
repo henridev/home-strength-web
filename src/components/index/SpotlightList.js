@@ -21,8 +21,8 @@ export default function Spotlights({ edges }) {
             <div className="justify-center flex flex-wrap">
               <div className="w-full lg:w-12/12 px-4  mt-24">
                 <div className="flex flex-wrap">
-                  {edges.map(({ node }) => (
-                    <SpotlightItem node={node} />
+                  {edges.map(({ node }, i) => (
+                    <SpotlightItem key={i} node={node} />
                   ))}
                 </div>
               </div>

@@ -21,6 +21,17 @@ export default function vacature({ data }) {
               terug naar shop
             </button>
           </Link>
+          <button
+            data-item-id={post.contentful_id}
+            data-item-price={post.prijs}
+            data-item-image={post.afbeelding.fluid.src}
+            data-item-url={`${data.site.siteMetadata.siteUrl}/shop`}
+            data-item-name={post.naam}
+            data-item-description={post.omschrijving}
+            className="snipcart-add-item font-semibold m-3 text-red-dark bg-white hover:bg-grey  hover: rounded shadow hover:shadow-lg py-2 px-4   hover:border-grey"
+          >
+            voeg-toe aan bestelling
+          </button>
         </div>
       </div>
     </Layout>
@@ -34,14 +45,19 @@ export const query = graphql`
         fluid(maxWidth: 350, maxHeight: 250) {
           ...GatsbyContentfulFluid
         }
-        contentful_id
       }
+      contentful_id
       slug
       prijs
       omschrijving
       ingredienten
       categorie
       naam
+    }
+    site {
+      siteMetadata {
+        siteUrl
+      }
     }
   }
 `

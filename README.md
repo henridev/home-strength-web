@@ -40,3 +40,7 @@ Handleiding die aantoont hoe delen van de website aangepast moeten worden via de
 
     - duid aan welk type content je wil toevoegen ![stap](https://drive.google.com/uc?export=view&id=1PXcfM9oYcyEeWGykWmEQFBTZozGavhDe)
     - herhaal process 3
+
+## todo
+
+- https://www.youtube.com/watch?v=QGziGnYFJUs

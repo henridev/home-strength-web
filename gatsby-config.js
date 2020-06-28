@@ -73,9 +73,9 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-snipcartv3",
+      resolve: "gatsby-plugin-snipcart",
       options: {
-        apiKey: process.env.SNIPCART_PUBLIC_KEY,
+        apiKey: process.env.SNIPCART_PUBLIC_KEY_LIVE,
         autopop: false,
       },
     },

@@ -1,6 +1,41 @@
-$Deep-Red: #b11a21;
-$Lighter-Red: #e0474c;
-$Blue-Beans: #7acfd6;
-$Light-Classy-Grey: #f1f0ee;
-$Deep-Red-trans: #b11a229d;
-$Blue-Beans-trans: #7aced6a8;
+$text-primary: #00568F;
+$text-secondary: #3E4756;
+
+$highlight-primary: #00B2FF;
+
+$background-primary:#F1F1E6;
+$background-secondary:#DDA01D;
+
+$alert-primary: #883753;
+$success-primary:#33C191;
+
+// Set the derived variables
+$primary: $text-primary;
+$primary-invert: $background-primary;
+
+
+// Setup your Custom Colors inverts
+$text-primary-invert: findColorInvert(#00568F);
+$text-secondary-invert:findColorInvert(#3E4756);
+
+$highlight-primary-invert: findColorInvert(#00B2FF);
+
+$background-primary-invert:findColorInvert(#F1F1E6);
+$background-secondary-invert:findColorInvert(#DDA01D);
+
+$alert-primary-invert: findColorInvert(#883753);
+$success-primary-invert:findColorInvert(#33C191);
+
+
+// Add new color variables to the color map.
+
+$addColors: (
+  "text-primary":($text-primary, $text-primary-invert),
+  "highlight-primary:": ($highlight-primary, $highlight-primary-invert),
+  "background-primary": ($background-primary, $background-primary-invert),
+  "success-primary": ($success-primary,$success-primary),
+  "alert-primary": ($alert-primary,$alert-primary),
+  "text-secondary":($text-secondary, $text-secondary-invert),
+  "background-secondary": ($background-secondary, $background-secondary-invert),
+);
+$colors: map-merge($colors, $addColors);

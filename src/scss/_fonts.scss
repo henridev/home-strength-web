@@ -1,0 +1,16 @@
+@font-face {
+    font-family: "inter";
+    src: url("/fonts/inter.ttf");
+}
+
+@font-face {
+    font-family: "inter";
+    src: url("/fonts/quicksand.ttf");
+}
+
+$family-sans-serif-primary: "inter", "Arial", "Verdana" , sans-serif;
+$family-sans-serif-secondary: "quicksand", "Arial", "Verdana" , sans-serif;
+
+// Set the derived variables
+$family-primary: $family-sans-serif-primary;
+$family-secondary: $family-sans-serif-secondary;

@@ -1,10 +1,15 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-@import url("https://fonts.googleapis.com/css2?family=Lato&family=Noto+Sans+JP&family=Open+Sans&family=Roboto&display=swap");
-@import "_colors";
-@import "general";
-@import "vacatures";
-@import "contact";
-@import "thanks";
-@import "home";
+@charset "utf-8";
+
+
+@import "~bulma/bulma.sass";
+@import "./_fonts";
+@import "./_colors";
+
+
+
+
+
+
+
+
+
